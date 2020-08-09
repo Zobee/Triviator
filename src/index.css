@@ -1,13 +1,226 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Slabo+27px&display=swap");
+
+.app{
+  font-family: 'Roboto', serif;
+  background-color: rgb(251, 249, 249);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  color: #333;
+  font-weight: 900;
+  font-size: 2rem;
+  font-family: 'Slabo 27px', serif;
+  font-variant: small-caps;
+  font-style: italic;
+  letter-spacing: 0.2rem;
+  border-radius: 5px;
+}
+
+.header-left{
+  cursor: pointer;
+}
+
+.header-left img{
+  height: 10vh;
+  width: 10vh;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.header-right{
+
+}
+
+/*Categories*/
+.cat-more-info{
+  background-color: #fff;
+  border: solid 1px black;
+  border-radius: 50%;
+  margin: 0.5rem;
+  padding: auto; 
+  transition: all 0.15s ease-in-out;
+  outline: none;
+  vertical-align: middle;
+}
+
+.cat-more-info:hover{
+  transform: scale(1.05);
+  color: blueviolet;
+  border-color: blueviolet;
+  cursor: pointer;
+}
+
+.cat-more-info:focus{
+  transform: scale(1.05);
+  color: blueviolet;
+  border-color: blueviolet;
+  cursor: pointer;
+}
+
+.cat-modal{
+  opacity: 0;
+  transform: translateX(-5rem);
+  display: none;
+  transition: all 0.2s ease-in;
+  overflow: hidden;
+  height: 0;
+}
+
+.cat-modal.modal-on{
+  opacity: 1;
+  background-color: rgb(92, 88, 88);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.2s ease-in;
+  transform: translateX(0);
+  margin: 0;
+  padding: 1rem;
+  opacity: 1;
+  height: auto;
+}
+
+.modal-title{
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-decoration: double;
+}
+
+.category-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 900;
+}
+
+.category-title{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.category-icon{
+  align-self: center;
+  margin-right: 1rem;
+}
+
+.category-btn{
+  font-size: 1.5rem;
+  border-radius: 6px;
+  color: white;
+  box-shadow: 2px 2px 4px #666;
+  margin: 0.2rem auto;
+  padding: 0.5rem;
+  transition: all 0.25s ease-in-out;
+  width: 50%;
+}
+
+.category-btn:hover{
+  box-shadow: 1px 1px 2px #222;
+  transform: translateY(0.1rem);
+  cursor: pointer;
+}
+
+.play-btn{
+  background: rgb(82, 82, 223);
+}
+
+.play-btn:hover{
+  background: rgb(42, 42, 151);
+}
+
+.challenge-btn{
+  background: rgb(240, 68, 45);
+}
+
+.challenge-btn:hover{
+  background: rgb(180, 36, 36);
+}
+
+.category-container{
+}
+
+.category{
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1rem 2rem;
+  padding-bottom: 0.25rem;
+  width: 46%;
+  float: left;
+}
+
+
+/*Question/Results*/
+.question-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.timer{
+  width: 20vh;
+  height: 20vh;
+  margin: 0 auto 1rem;
+}
+
+.ans-btn{
+  margin: 1rem 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  background-image: linear-gradient(200deg, #436ca1 0%, #80bcdf 51%);
+  box-shadow: 3px 2px 2px #666666;
+  transition: all 0.24s ease;
+}
+
+.ans-btn:hover{
+  background-image: linear-gradient(200deg, #224575 0%, #6fa9ca 51%);
+  transform: translateY(2px);
+  box-shadow: 2px 1px 0px #222222;
+  background-position: right, center;
+}
+
+.correct{
+}
+
+.question{
+  transition: all 0.1s ease-in-out;
+}
+
+.btn-on{
+  opacity: 0;
+  transform: scale(1.1)
+}
+
+.btn-off{
+  opacity: 1;
+  transform: scale(1)
+}
+
+.question-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.tringle{
+  border: 30vh solid blue; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  margin: 0;
+  opacity: 20%;
+  border-radius: 50%;
 }
